@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6a92b906c057512ced06c7f9_962899f6-b265-4e56-b58f-f3a2f8b6f13b",
-  "id": "Page1_Query1",
+  "gitSyncId": "6a92b9c7c057512ced06c800_088d4585-b30b-46bb-b433-0142f5255f0c",
+  "id": "Page1_restoreBC",
   "pluginId": "mssql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "select * from barcodedet where bc_val1='{{bc_val1.text.trim()}}'",
+      "body": "update BarcodeDet set REntry_ty='',RTran_cd=0,reason=null where BC_Val1='{{bc_val1.text.trim()}}'",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "Query1",
+    "name": "restoreBC",
     "pageId": "Page1",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

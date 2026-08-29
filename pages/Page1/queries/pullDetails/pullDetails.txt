@@ -1,0 +1,25 @@
+Select bc_val1,
+       b.Entry_ty,
+       b.Tran_cd,
+       REntry_ty,
+       RTran_cd,
+       reason,
+       am.Old_Value As party_nm,
+       i.it_name,
+       am.New_Value As [status]
+From   BarcodeDet As b
+       Left Outer Join
+       IT_MAST As i
+       On b.it_code = i.it_code
+       Left Outer Join
+       stitem As s
+       On b.REntry_ty = s.entry_ty
+          And b.RTran_cd = s.Tran_cd
+          And i.It_code = s.It_code
+       Left Outer Join
+       Amend_Detail As am
+       On b.REntry_ty = am.entry_ty
+          And b.RTran_cd = am.Tran_cd
+          And b.reason = am.inv_no
+          And tbl_fld = 'party_nm'
+where bc_val1='{{bc_val1.text.trim()}}';

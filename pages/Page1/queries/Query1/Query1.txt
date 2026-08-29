@@ -1,1 +1,0 @@
-select * from barcodedet where bc_val1='{{bc_val1.text.trim()}}'

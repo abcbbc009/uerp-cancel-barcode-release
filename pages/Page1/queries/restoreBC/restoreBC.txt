@@ -1,0 +1,1 @@
+update BarcodeDet set REntry_ty='',RTran_cd=0,reason=null where BC_Val1='{{bc_val1.text.trim()}}'
